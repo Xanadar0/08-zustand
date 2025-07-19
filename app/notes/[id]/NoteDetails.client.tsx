@@ -26,17 +26,19 @@ export default function NoteDetailsClient() {
       {isLoading && <Loader />}
       {isError && !note && <ErrorMessage error={error} />}
       {note && (
-        <div className={css.container}>
-          <div className={css.item}>
-            <div className={css.header}>
-              <h2>{note.title}</h2>
-              <button className={css.editBtn}>Edit note</button>
+        <main>
+          <div className={css.container}>
+            <div className={css.item}>
+              <div className={css.header}>
+                <h2>{note.title}</h2>
+                <button className={css.editBtn}>Edit note</button>
+              </div>
+              <p className={css.tag}>{String(note.tag)}</p>
+              <p className={css.content}>{note.content}</p>
+              <p className={css.date}>Created date: {note.createdAt}</p>
             </div>
-            <p className={css.tag}>{String(note.tag)}</p>
-            <p className={css.content}>{note.content}</p>
-            <p className={css.date}>Created date: {note.createdAt}</p>
           </div>
-        </div>
+        </main>
       )}
     </>
   );

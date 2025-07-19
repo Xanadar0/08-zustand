@@ -10,8 +10,7 @@ export default function NotePreviewClient() {
   const router = useRouter();
   const { id } = useParams<{ id: string }>();
   const noteId = +id;
-
-  const { data, isLoading, isError, error } = useQuery({
+  const { data } = useQuery({
     queryKey: ["note", noteId],
     queryFn: () => fetchNoteId(noteId),
     refetchOnMount: false,
@@ -23,15 +22,7 @@ export default function NotePreviewClient() {
 
   return (
     <Modal onClose={handleClose}>
-      {isLoading && <p>Loading...</p>}
-
-      {isError && (
-        <div>
-          <strong>Error:</strong> {(error as Error).message}
-        </div>
-      )}
-
-      {data && <NotePreview note={data} />}
+      <NotePreview note={data} />
     </Modal>
   );
 }
