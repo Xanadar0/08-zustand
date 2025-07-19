@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "404 — Notehub",
     description:
       "Looks like you've reached a dead end. Let's get you back to your notes.",
-    url: "https://08-zustand-beta.vercel.app/404",
+    url: "https://08-zustand-iota-tan.vercel.app/404",
     images: [
       {
         url: "https://colorlib.com/wp/wp-content/uploads/sites/2/404-error-page-templates.jpg",
